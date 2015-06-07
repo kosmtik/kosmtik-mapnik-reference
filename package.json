@@ -1,0 +1,28 @@
+{
+  "name": "kosmtik-mapnik-reference",
+  "version": "0.0.1",
+  "description": "Browse Mapnik and CartoCSS reference in Kosmtik",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kosmtik/kosmtik-mapnik-reference.git"
+  },
+  "keywords": [
+    "kosmtik",
+    "mapnik",
+    "cartocss"
+  ],
+  "author": "Yohan Boniface",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/kosmtik/kosmtik-mapnik-reference/issues"
+  },
+  "homepage": "https://github.com/kosmtik/kosmtik-mapnik-reference",
+  "dependencies": {
+    "mapnik-reference": "^7.0.1"
+  },
+  "kosmtik": "~0.0.10"
+}

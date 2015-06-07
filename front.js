@@ -53,7 +53,6 @@ L.K.Map.addInitHook(function () {
             L.K.Xhr.get('/mapnik-reference/', {
                 callback: function (status, _data) {
                     data = JSON.parse(_data);
-                    console.log(data);
                     build();
                 }
             });

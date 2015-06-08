@@ -1,6 +1,6 @@
 {
   "name": "kosmtik-mapnik-reference",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Browse Mapnik and CartoCSS reference in Kosmtik",
   "main": "index.js",
   "scripts": {

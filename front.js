@@ -5,16 +5,17 @@ L.K.Map.addInitHook(function () {
             formContainer = L.DomUtil.create('div', '', container),
             docContainer = L.DomUtil.create('div', '', container),
             params = {
-                filter: ''
+                filterSymbolizers: '',
+                filterRules: ''
             },
             builder = new L.K.FormBuilder(params, [
-                ['filter', {handler: 'Input', placeholder: 'Filter symbolizers…'}]
+                ['filterSymbolizers', {handler: 'Input', placeholder: 'Filter symbolizers…'}],
+                ['filterRules', {handler: 'Input', placeholder: 'Filter rules…'}]
             ], {id: 'mapnik-reference-form'});
-        title.innerHTML = 'CartoCSS Reference';
         formContainer.appendChild(builder.build());
         var addRule = function (container, name, properties) {
             name = properties.css || name;
-            var filter = (params.filter || '').toLowerCase();
+            var filter = (params.filterRules || '').toLowerCase();
             if (filter && name.toLowerCase().indexOf(filter) === -1) return;
             var title = L.DomUtil.create('h5', 'rule', container);
             title.innerHTML = name + '=';
@@ -38,12 +39,16 @@ L.K.Map.addInitHook(function () {
             }
         };
         var addSymbolizer = function (name, rules) {
-            var content = L.DomUtil.create('div', 'symbolizer', docContainer);
-            var title = L.DomUtil.create('h4', '', content);
+            var filter = (params.filterSymbolizers || '').toLowerCase();
+            if (filter && name.toLowerCase().indexOf(filter) === -1) return;
+            var wrapper = L.DomUtil.create('div', 'symbolizer', docContainer);
+            var title = L.DomUtil.create('h4', '', wrapper);
+            var content = L.DomUtil.create('div', 'rules', wrapper);
             title.innerHTML = name;
             for (var rule in rules) addRule(content, rule, rules[rule]);
         };
         var build = function () {
+            title.innerHTML = 'CartoCSS Reference (' + data.version + ')';
             docContainer.innerHTML = '';
             for (var symbolizer in data.symbolizers) addSymbolizer(symbolizer, data.symbolizers[symbolizer]);
         };
@@ -61,7 +66,8 @@ L.K.Map.addInitHook(function () {
             label: 'Reference',
             className: 'mapnik-reference',
             content: container,
-            callback: fetchData
+            callback: fetchData,
+            large: true
         });
         this.commands.add({
             keyCode: L.K.Keys.H,

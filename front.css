@@ -2,30 +2,42 @@
     background-color: #444;
     padding: 5px;
     margin-bottom: 5px;
+    margin-top: 5px;
 }
 .mapnik-reference .symbolizer {
-    background-color: #777;
+    background-color: #efefef;
+    padding-bottom: 5px;
 }
 .mapnik-reference h5 {
     padding: 0 10px;
-    margin-left: 10px;
     margin-right: 10px;
-    background-color: #555;
+    color: #333;
     font-size: 1.1em;
+    padding-top: 5px;
+}
+.mapnik-reference p + h5 {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
 }
 .mapnik-reference .symbolizer p {
     font-size: 0.9em;
-    padding: 0 20px;
+    padding: 0 10px;
     text-align: justify;
-}
-.mapnik-reference h5 {
-    padding-top: 5px;
-    border-top: 1px solid #666;
-}
-.mapnik-reference h5:first-of-type {
-    border: none;
+    color: #333;
 }
 .mapnik-reference .symbolizer p {
     margin-bottom: 5px;
     margin-top: 5px;
+    line-height: 1em;
+}
+.mapnik-reference .symbolizer .rules {
+    -moz-columns: 300px 4;
+    -webkit-columns: 300px 4;
+}
+#mapnik-reference-form input {
+    display: inline-block;
+    width: calc(50% - 5px);
+}
+#mapnik-reference-form input + input {
+    margin-left: 10px;
 }

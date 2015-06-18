@@ -52,7 +52,7 @@ L.K.Map.addInitHook(function () {
             docContainer.innerHTML = '';
             for (var symbolizer in data.symbolizers) addSymbolizer(symbolizer, data.symbolizers[symbolizer]);
         };
-        builder.on('synced', build);
+        builder.on('postsync', build);
         var fetchData = function () {
             if (data) return;
             L.K.Xhr.get('/mapnik-reference/', {

@@ -1,3 +1,7 @@
+.mapnik-reference h3 {
+    height: 50px;
+    line-height: 50px;
+}
 .mapnik-reference h4 {
     background-color: #444;
     padding: 5px;
@@ -34,10 +38,24 @@
     -moz-columns: 300px 4;
     -webkit-columns: 300px 4;
 }
+.mapnik-reference .status {
+    border-radius: 1px;
+    color: #fff;
+    font-size: 0.7em;
+    margin-left: 5px;
+    padding: 2px 5px;
+    vertical-align: middle;
+    background-color: #F39C12;
+}
+.mapnik-reference .status.deprecated {
+    background-color: #D91E18;
+}
+#mapnik-reference-form {
+    float: right;
+    width: 50%;
+}
 #mapnik-reference-form input {
     display: inline-block;
-    width: calc(50% - 5px);
-}
-#mapnik-reference-form input + input {
-    margin-left: 10px;
+    width: 100%;
+    margin-bottom: 10px;
 }

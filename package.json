@@ -1,6 +1,6 @@
 {
   "name": "kosmtik-mapnik-reference",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Browse Mapnik and CartoCSS reference in Kosmtik",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/kosmtik/kosmtik-mapnik-reference",
   "dependencies": {
-    "mapnik-reference": "^8.5.5"
+    "mapnik-reference": "^8.8.1"
   },
   "kosmtik": "~0.0.11"
 }
